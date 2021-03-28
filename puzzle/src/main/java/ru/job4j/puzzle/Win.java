@@ -2,7 +2,6 @@ package ru.job4j.puzzle;
 
 public class Win {
     public static boolean check(int[][] board) {
-        System.out.println();
         boolean rsl = false;
         if (checkDiag(board)) {
             if (checkHor(board) || checkVert(board)) {
