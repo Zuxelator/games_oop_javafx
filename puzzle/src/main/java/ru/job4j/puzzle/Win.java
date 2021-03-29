@@ -3,53 +3,34 @@ package ru.job4j.puzzle;
 public class Win {
     public static boolean check(int[][] board) {
         boolean rsl = false;
-        if (checkDiag(board)) {
-            if (checkHor(board) || checkVert(board)) {
-                rsl = true;
+        for (int i = 0; i < board.length; i++) {
+            if (board[i][i] == 1) {
+                if (checkHor(board, i) || checkVert(board, i)) {
+                    rsl = true;
+                    break;
+                }
             }
         }
+
         return rsl;
     }
 
-    public static boolean checkDiag (int[][] arr) {
-        boolean res = false;
+    public  static  boolean checkHor (int[][] arr, int row) {
+        boolean res = true;
         for (int i = 0; i < arr.length; i++) {
-            if (arr[arr.length - 1 - i][i] == 1) {
-                res = true;
+            if (arr[row][i] != 1) {
+                res = false;
                 break;
-            }
-        }
-        return  res;
-
-    }
-
-    public  static  boolean checkHor (int[][] arr) {
-        boolean res = false;
-        for (int[] ints : arr) {
-            int counter = 0;
-            for (int j = 0; j < arr.length; j++) {
-                if (ints[j] == 1) {
-                    counter++;
-                }
-            }
-            if (counter == arr.length) {
-                res = true;
             }
         }
         return res;
     }
 
-    public static boolean checkVert (int[][] arr) {
-        boolean res = false;
+    public static boolean checkVert (int[][] arr, int cell) {
+        boolean res = true;
         for (int i = 0; i < arr.length; i++) {
-            int counter = 0;
-            for (int[] ints : arr) {
-                if (ints[i] == 1) {
-                    counter++;
-                }
-            }
-            if (counter == arr.length) {
-                res = true;
+            if (arr[i][cell] != 1) {
+                res = false;
                 break;
             }
         }
