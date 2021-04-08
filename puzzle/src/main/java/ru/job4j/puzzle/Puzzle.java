@@ -25,6 +25,7 @@ public class Puzzle extends Application {
     private final int size = 5;
     private final Logic logic = new Logic(size);
 
+
     private Rectangle buildRectangle(int x, int y, int size) {
         Rectangle rect = new Rectangle();
         rect.setX(x * size);
@@ -34,6 +35,7 @@ public class Puzzle extends Application {
         rect.setFill(Color.WHITE);
         rect.setStroke(Color.BLACK);
         return rect;
+
     }
 
     private Rectangle buildFigure(int x, int y, int size, String image) {
@@ -83,6 +85,8 @@ public class Puzzle extends Application {
             alert.showAndWait();
         }
     }
+
+    //Тест
 
     private Group buildGrid() {
         Group panel = new Group();
