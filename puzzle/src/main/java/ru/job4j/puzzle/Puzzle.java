@@ -86,7 +86,6 @@ public class Puzzle extends Application {
         }
     }
 
-    //Тест
 
     private Group buildGrid() {
         Group panel = new Group();
